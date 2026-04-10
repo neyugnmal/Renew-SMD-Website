@@ -1,0 +1,831 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; /* luôn nằm trên */
+}
+/* TOP BAR */
+.header-top {
+    background-color: #520556;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 4%;
+}
+
+/* LEFT */
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20%;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.lang {
+    font-size: 1rem;
+    opacity: 0.8;
+    white-space: nowrap;
+
+}
+
+.lang span {
+    opacity: 0.5;
+    transition: 0.3s;
+}
+
+.lang span:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.lang span.active {
+    opacity: 1;
+}
+
+/* RIGHT */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 3%;
+}
+
+/* SEARCH */
+.search {
+    padding: 0.6em 1em;
+    border-radius: 20px;
+    border: none;
+    outline: none;
+    width: 15vw;
+}
+
+/* MENU ICON */
+.menu-icon {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.menu-icon span {
+    display: block;
+    width: 25px;
+    height: 2px;
+    background: white;
+}
+
+/* NAVBAR */
+.navbar {
+    background: white;
+    display: flex;
+    justify-content: center;
+    gap: 5%;
+    padding: 1.5% 0;
+
+    /* shadow nhẹ */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #1E1E1E;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+
+    transition: 0.3s;
+}
+
+.navbar a {
+  color: #1E1E1E;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.navbar a.active {
+  color: #bc0fc5;
+}
+
+.navbar a:hover {
+    color: #79277D;
+}
+
+body {
+  padding-top: 180px; /* chỉnh theo chiều cao header của bạn */
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: #5f0f63;
+    /* tím đậm hơn nền */
+    padding: 10px 20px;
+    border-radius: 999px;
+
+    width: 25vw;
+    /* responsive */
+    min-width: 250px;
+}
+
+/* icon */
+.search-box i {
+    color: #c77dd1;
+    /* tím nhạt */
+    font-size: 16px;
+}
+
+/* input */
+.search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+
+    color: #e0a3e6;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* placeholder */
+.search-box input::placeholder {
+    color: #c77dd1;
+    opacity: 0.8;
+}
+
+.featured {
+  display: flex;
+  width: 100%;
+  height: 500px;
+}
+
+/* IMAGE 3 phần */
+.featured-image {
+  flex: 3;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* CONTENT 2 phần */
+.featured-content {
+  flex: 7;
+  background: #5f0f63;
+  padding: 4%;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* TITLE */
+.featured-content h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #e0a3e6;
+  margin-bottom: 20px;
+  line-height: 1.15;
+
+}
+
+/* TEXT */
+.featured-content p {
+  font-family: 'Archivo', sans-serif;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+
+}
+
+.news-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* TITLE */
+.news-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #79277D;
+}
+
+.news-sub {
+  font-family: 'Archivo', sans-serif;
+  margin-bottom: 30px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* GRID */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* tăng khoảng cách */
+}
+
+/* CARD */
+.news-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+}
+
+/* META */
+.news-meta {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: #79277D;
+  margin-bottom: 10px;
+}
+
+/* IMAGE */
+.news-img {
+  width: 100%;
+  height: 160px;
+  background: #ddd;
+  margin-bottom: 15px;
+}
+.news-img {
+  width: 100%;
+  height: 180px; /* bạn chỉnh theo design */
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.news-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* QUAN TRỌNG: crop ảnh đẹp */
+  display: block;
+}
+.stuad-img {
+  width: 100%;
+  height: 180px; /* bạn chỉnh theo design */
+  overflow: hidden;
+  border-radius: 2px;
+  margin-bottom: 10px;
+}
+
+.stuad-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* QUAN TRỌNG: crop ảnh đẹp */
+  display: block;
+}
+/* TITLE CARD */
+.news-card h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #79277D;
+  margin-bottom: 10px;
+}
+
+/* CONTENT */
+.news-card p {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #555;
+    line-height: 1.5;
+
+}
+.stuad-section {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+/* TITLE */
+.stuad-title {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  color: #79277D;
+}
+
+.stuad-sub {
+  font-family: 'Archivo', sans-serif;
+  margin-bottom: 30px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* GRID */
+.stuad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px; /* tăng khoảng cách */
+}
+/* CARD */
+.stuad-card {
+  border: 1px solid #ccc;
+  padding: 15px;
+  background: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.stuad-card:hover {
+  transform: translateY(-6px);
+}
+
+/* META */
+.stuad-meta {
+  font-family: 'Archivo', sans-serif;
+  font-size: 14px;
+  color: #79277D;
+  margin-bottom: 10px;
+}
+
+/* IMAGE */
+.stuad-img {
+  width: 100%;
+  height: 160px;
+  background: #ddd;
+  margin-bottom: 15px;
+}
+
+/* TITLE CARD */
+.stuad-card h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #79277D;
+  margin-bottom: 10px;
+}
+
+/* CONTENT */
+.stuad-card p {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* MODAL */
+.news-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background: white;
+  width: 60%;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.modal-content h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+}
+
+.modal-content p {
+  font-family: 'Archivo', sans-serif;
+}
+
+.close {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;  /* Bold */
+  font-size: 64px;
+}
+
+/* ===== TABLET ===== */
+@media (max-width: 1024px) {
+    .header-top {
+    padding: 10px 4%;
+  }
+
+  .logo {
+    height: 45px;
+  }
+
+  .search-box {
+    width: 35vw;
+  }
+
+  .navbar {
+    gap: 3%;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+  }
+
+}
+
+ .featured {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+
+  .featured-image,
+  .featured-content {
+    width: 100%;
+  }
+
+  .featured-content {
+    padding: 6%;
+  }
+
+  .featured-content h1 {
+    font-size: 36px;
+  }
+
+/* CONTENT */
+.featured-content {
+  width: 40%;
+  background: #5f0f63;
+  padding: 5%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* TITLE */
+.featured-content h1 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 700;
+  font-size: 48px;
+  color: #e0a3e6; /* tím pastel */
+
+  margin-bottom: 20px;
+}
+
+/* DESCRIPTION */
+.featured-content p {
+  font-family: 'Archivo', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+    /* Hiện icon */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    width: 30px;
+    height: 1px;
+    border-radius: 999px; 
+    background: rgb(255, 255, 255);
+  }
+  /* Navbar ẩn mặc định */
+ 
+  .navbar {
+    position: absolute;
+    top: 100%;   /* ngay dưới header */
+    right: 5%;   /* sát bên phải */
+
+    width: 200px;
+    background: white;
+
+    flex-direction: column;
+    padding: 15px;
+
+    display: none;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  .navbar.show {
+    display: flex;
+  }
+
+  /* Khi active thì hiện */
+  .navbar.show {
+    display: flex;
+  }
+
+  /* Style link */
+  .navbar a {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+
+    /* Header co lại */
+  .header-top {
+    padding: 8px 5%;
+  }
+
+  /* Logo nhỏ lại */
+  .logo {
+    height: 40px;
+  }
+
+  /* Ẩn navbar */
+  .navbar {
+    display: flex;
+  }
+
+  /* Search nhỏ lại */
+  .search-box {
+    width: 60vw;
+    padding: 8px 15px;
+  }
+
+  /* Sắp xếp lại layout */
+  .header-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header-left,
+  .header-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .featured-content {
+    padding: 8%;
+  }
+
+  .featured-content h1 {
+    font-size: 26px;
+  }
+
+  .featured-content p {
+    font-size: 16px;
+  }
+
+  @media (max-width: 768px) {
+
+  /* Hiện icon */
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+  }
+
+  .menu-icon span {
+    width: 25px;
+    height: 3px;
+    background: white;
+  }
+  /* Navbar ẩn mặc định */
+  .navbar {
+    position: absolute;
+    top: 100%;
+    right: 0;
+
+    width: 70%;
+    background: white;
+
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 20px;
+
+    display: none;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  /* Khi active thì hiện */
+  .navbar.show {
+    display: flex;
+  }
+
+  /* Style link */
+  .navbar a {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+  }
+}
+
+}
+
+@media (max-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
+@media (max-width: 1024px) {
+  .stuad-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .stuad-grid {
+    grid-template-columns: 1fr;
+  }
+  .dropdown.show .dropdown-content {
+  display: block;
+}
+}
+
+
+a {
+  text-decoration: none;
+}
+
+body {
+  margin: 0;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 500;
+}
+
+.footer {
+  background: #520556;
+  color: #fff;
+  padding: 60px 80px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+/* LEFT */
+.footer-left {
+  max-width: 320px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.logo img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+/* SOCIAL */
+.socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.socials a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  color: #520556;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  transform: translateY(-3px);
+}
+
+/* LINKS COLUMNS */
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 180px;
+}
+
+.footer-col a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.2s;
+}
+
+.footer-col a:hover {
+  opacity: 0.7;
+}
+
+/* COPYRIGHT */
+.copyright {
+  margin-top: 20px;
+  font-size: 12px;
+  opacity: 0.8;
+}
+.footer-left {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* đảm bảo tất cả căn trái */
+}
+
+/* LOGO */
+.logo img {
+  width: 250px;        /* tăng kích thước logo */
+  height: auto;
+  display: block;      /* tránh lệch baseline */
+  margin-bottom: 2px;
+}
+
+/* dropdown wrapper */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* submenu */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background: white;
+  min-width: 300px;
+
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+/* submenu items */
+.dropdown-content a {
+  display: block;
+  padding: 12px 16px;
+  font-size: 16px;
+  color: #1E1E1E;
+  white-space: nowrap;
+}
+
+.dropdown-content a:hover {
+  background: #f3f3f3;
+  color: #79277D;
+}
+
+/* hover show */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* optional: style Academic giống navbar */
+.dropbtn {
+  text-decoration: none;
+  color: #1E1E1E;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.dropbtn:hover {
+  color: #79277D;
+}

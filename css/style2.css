@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-purple: #6A1B9A;
+    --deep-purple: #4A148C;
+    --light-purple: #E1BEE7;
+    --gradient: linear-gradient(135deg, #8E24AA, #D81B60);
+    --bg-light: #F9F6FB;
+    --text-dark: #2E1A47;
+    --white: #FFFFFF;
+    --border-grey: #E0E0E0;
+    --spacing: 8px;
+    --transition: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: var(--white);
+    color: var(--text-dark);
+    line-height: 1.5;
+    width: 100%;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Grid Background --- */
+.grid-bg {
+    background-image: 
+        linear-gradient(to right, rgba(106, 27, 154, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(106, 27, 154, 0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+/* --- Header --- */
+header {
+    width: 100%;
+}
+
+.top-header {
+    background: var(--primary-purple);
+    color: var(--white);
+    padding: 10px 0;
+}
+
+.header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.lang-switch {
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.lang-switch span {
+    opacity: 0.6;
+}
+
+.search-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.search-bar {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-bar input {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    border-radius: 4px;
+    padding: 8px 12px 8px 35px;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.search-bar svg {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
+.menu-toggle {
+    cursor: pointer;
+}
+
+.main-nav {
+    background: var(--white);
+    border-bottom: 1px solid var(--border-grey);
+    padding: 15px 0;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 14px;
+    transition: var(--transition);
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-purple);
+}
+
+.hero {
+    padding: 150px;
+    height: 600px;
+    background: url('/assets/img/logo.png') center/cover;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin-right: 20px;
+}
+
+.hero-subtitle {
+    color: var(--primary-purple);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero h1 {
+    font-size: 64px;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--deep-purple);
+    margin-bottom: 20px;
+}
+
+.hero-desc-box {
+    background: var(--deep-purple);
+    color: var(--white);
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+    border: none;
+}
+
+.btn-white {
+    background: var(--white);
+    color: var(--deep-purple);
+}
+
+.btn-white:hover {
+    background: var(--bg-light);
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.event-container {
+    background: var(--white);
+    border: 1px solid var(--border-grey);
+    margin-bottom: 30px;
+}
+
+.event-header {
+    padding: 10px 20px;
+    border-bottom: 1px solid var(--border-grey);
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.event-label {
+    color: var(--primary-purple);
+}
+
+.event-date {
+    color: #999;
+    margin-left: 5px;
+}
+
+.event-body {
+    padding: 20px;
+}
+
+.event-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.event-text h3 {
+    color: var(--primary-purple);
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.event-text p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* .card-img-placeholder {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+} */
+
+.card-img-placeholder {
+    width: 100%;
+    height: 200px; /* hoặc chiều cao bạn muốn */
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.card-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.event-text.small h4 {
+    color: var(--primary-purple);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+}
+
+.stat-main {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.stat-number {
+    font-size: 96px;
+    font-weight: 800;
+    color: var(--deep-purple);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-purple);
+    line-height: 1.2;
+}
+
+.video-container {
+    width: 100%;
+    height: 400px;
+    background: var(--white);
+    border: 1px solid var(--border-grey);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-btn {
+    width: 100px;
+    height: 100px;
+    background: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.wave-divider {
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.wave-img {
+    width: 100%;
+    height: auto;
+}
+
+.admission-section {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.admission-section h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--deep-purple);
+    margin-bottom: 20px;
+}
+
+.admission-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-grey);
+    border-radius: 4px;
+    background: #F5F5F5;
+    font-size: 14px;
+}
+
+.checkbox-container {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.checkbox-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-disclaimer {
+    grid-column: span 2;
+    font-size: 11px;
+    color: #999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--deep-purple);
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* --- Footer --- */
+footer {
+    background: var(--deep-purple);
+    color: var(--white);
+    padding: 60px 0 30px;
+    position: relative;
+}
+
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.footer-logos {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.ueh-logo {
+    max-width: 20px;
+}
+
+.ueh-logo span {
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.smd-logo {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.footer-links-grid {
+    display: flex;
+    gap: 60px;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 13px;
+    transition: var(--transition);
+}
+
+.footer-col ul li a:hover {
+    color: var(--white);
+}
+
+.footer-contact {
+    margin-bottom: 40px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-contact p {
+    margin-bottom: 5px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: var(--transition);
+}
+
+.social-icon:hover {
+    background: var(--primary-purple);
+}
+
+.floating-btn {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--primary-purple);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.6s ease-out;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    .header-flex { flex-direction: column; gap: 15px; }
+    .search-container { order: 3; width: 100%; }
+    .nav-links { gap: 15px; flex-wrap: wrap; }
+    .hero h1 { font-size: 40px; }
+    .event-grid { grid-template-columns: 1fr; }
+    .stats-container { flex-direction: column; gap: 40px; align-items: center; }
+    .form-grid { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; gap: 30px; }
+    .footer-links-grid { flex-direction: column; gap: 20px; }
+}
